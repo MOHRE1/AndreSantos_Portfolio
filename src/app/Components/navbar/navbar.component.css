@@ -1,0 +1,11 @@
+.navBar{
+  padding: 70px 0 70px 0;
+  border-bottom: 1px solid black;
+
+}
+
+.right-side-navbar span{
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 10px;
+}
