@@ -1,10 +1,11 @@
+<!-- Small Cursor -->
 <div
   class="custom-cursor small"
   [style.left.px]="cursorX"
-  [style.top.px]="cursorY">
+  [style.top.px]="cursorY"
+  [class.clicked]="isClicked">
 </div>
-
-<!-- Big ball (delayed movement) -->
+<!-- Big Cursor -->
 <div
   class="custom-cursor big"
   [style.left.px]="bigCursorX"

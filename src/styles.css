@@ -5,11 +5,21 @@ body{
   cursor: none;
 }
 
+.right-slider{
+   position: fixed;
+   right: -655px;
+   top: 45%;
+   transform: rotate(270deg);
+   font-size: 30px !important;
+   opacity: 0.03;
+ }
+
+/* Cursor effects */
 .custom-cursor {
   position: fixed;
-  pointer-events: none; /* Prevent blocking clicks */
+  pointer-events: none;
   z-index: 999;
-  transform: translate(-50%, -50%); /* Center the div */
+  transform: translate(-50%, -50%);
 }
 
 .custom-cursor.small {
@@ -18,32 +28,32 @@ body{
   background-color: black;
   border-radius: 50%;
   z-index: 9999;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+  background-color 0.3s ease,
+  border 0.3s ease;
+}
+
+.custom-cursor.small.clicked {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid black;
 }
 
 .custom-cursor.big {
   width: 60px;
   height: 60px;
-  background-color: #ffffff9c; /* Semi-transparent */
+  background-color: #ffffff9c;
   border-radius: 50%;
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
   width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
-  height 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth delay effect */
+  height 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .custom-cursor.big.clicked {
-  width: 100px; /* Bigger size when clicked */
+  width: 100px;
   height: 100px;
-  background-color: rgba(255, 255, 255, 0.8); /* Optional: slightly more opaque */
-}
-
-
-.right-slider{
-  position: fixed;
-  right: -655px;
-  top: 45%;
-  transform: rotate(270deg);
-  font-size: 30px !important;
-  opacity: 0.03;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Flex */

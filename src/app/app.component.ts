@@ -23,15 +23,8 @@ export class AppComponent {
   // Listen to mouse movement
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
-    this.cursorX = event.clientX - 10; // Small ball position (centered)
+    this.cursorX = event.clientX - 10;
     this.cursorY = event.clientY - 10;
-  }
-
-  // Animate the big ball with a slight delay
-  ngAfterViewChecked(): void {
-    const delay = 0.1; // Delay factor, adjust as needed
-    this.bigCursorX += (this.cursorX - this.bigCursorX) * delay;
-    this.bigCursorY += (this.cursorY - this.bigCursorY) * delay;
   }
   // Handle mouse click
   @HostListener('document:click')
@@ -39,6 +32,13 @@ export class AppComponent {
     this.isClicked = true;
     setTimeout(() => {
       this.isClicked = false;
-    }, 300); // Duration of the click effect
+    }, 400);
   }
+
+  ngAfterViewChecked(): void {
+    const delay = 0.095;
+    this.bigCursorX += (this.cursorX - this.bigCursorX) * delay;
+    this.bigCursorY += (this.cursorY - this.bigCursorY) * delay;
+  }
+
 }
