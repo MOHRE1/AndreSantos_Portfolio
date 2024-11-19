@@ -62,7 +62,7 @@
 
 .img-text-individual span{
   text-align: justify;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 .right-arrow{
@@ -80,6 +80,7 @@
 
 .second-sector{
   width: 100%;
+  padding-top: 30px;
 }
 
 .data-curriculum{
@@ -110,4 +111,30 @@
 
 .where{
   align-items: end;
+}
+
+.separations-2{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 250px;
+  margin-top: 110px;
+}
+
+.left-side-2{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  border-top: 1px dashed white;
+}
+
+.right-side-2{
+  width: 50%;
+  border-top: 1px solid black;
+}
+
+.tittle-number{
+  display: flex;
+  justify-content: center;
+  height: fit-content;
 }
