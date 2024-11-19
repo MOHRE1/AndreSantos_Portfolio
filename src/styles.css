@@ -2,7 +2,40 @@ body{
   background-color:#f5f5f5;
   margin-left: 150px;
   margin-right: 150px;
+  cursor: none;
 }
+
+.custom-cursor {
+  position: fixed;
+  pointer-events: none; /* Prevent blocking clicks */
+  z-index: 999;
+  transform: translate(-50%, -50%); /* Center the div */
+}
+
+.custom-cursor.small {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+.custom-cursor.big {
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff9c; /* Semi-transparent */
+  border-radius: 50%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+  width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+  height 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth delay effect */
+}
+
+.custom-cursor.big.clicked {
+  width: 100px; /* Bigger size when clicked */
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: slightly more opaque */
+}
+
 
 .right-slider{
   position: fixed;

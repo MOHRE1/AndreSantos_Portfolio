@@ -1,3 +1,16 @@
+<div
+  class="custom-cursor small"
+  [style.left.px]="cursorX"
+  [style.top.px]="cursorY">
+</div>
+
+<!-- Big ball (delayed movement) -->
+<div
+  class="custom-cursor big"
+  [style.left.px]="bigCursorX"
+  [style.top.px]="bigCursorY"
+  [class.clicked]="isClicked">
+</div>
 <app-navbar></app-navbar>
 <app-center-page></app-center-page>
 <app-individual></app-individual>
