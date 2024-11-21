@@ -1,0 +1,19 @@
+.full-projects{
+  width: 100%;
+  border-top: 1px solid black
+}
+
+.first-project{
+  width: 100%;
+  gap:200px;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-divider{
+  width: 35%;
+}
+
+.right-divider{
+  width: 65%;
+}
