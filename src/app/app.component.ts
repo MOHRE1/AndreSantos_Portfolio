@@ -1,4 +1,4 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, NgZone} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NavbarComponent} from './Components/navbar/navbar.component';
 import {CenterPageComponent} from './Components/center-page/center-page.component';
@@ -21,6 +21,10 @@ export class AppComponent {
   bigCursorY = 0;
   isClicked = false;
 
+  constructor(private zone: NgZone) {
+    this.animateBigCursor();
+  }
+
   // Listen to mouse movement
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
@@ -36,10 +40,18 @@ export class AppComponent {
     }, 400);
   }
 
-  ngAfterViewChecked(): void {
-    const delay = 0.095;
-    this.bigCursorX += (this.cursorX - this.bigCursorX) * delay;
-    this.bigCursorY += (this.cursorY - this.bigCursorY) * delay;
+  // Animate the big ball using requestAnimationFrame
+  private animateBigCursor(): void {
+    this.zone.runOutsideAngular(() => {
+      const step = () => {
+        const delay = 0.1; // Delay factor for smooth trailing
+        this.bigCursorX += (this.cursorX - this.bigCursorX) * delay;
+        this.bigCursorY += (this.cursorY - this.bigCursorY) * delay;
+
+        requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    });
   }
 
 }
