@@ -4,11 +4,12 @@ import {NavbarComponent} from './Components/navbar/navbar.component';
 import {CenterPageComponent} from './Components/center-page/center-page.component';
 import {IndividualComponent} from './Components/individual/individual.component';
 import {ProjectsComponent} from './Components/projects/projects.component';
+import {EmailComponent} from './Components/email/email.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, CenterPageComponent, IndividualComponent, ProjectsComponent],
+  imports: [RouterOutlet, NavbarComponent, CenterPageComponent, IndividualComponent, ProjectsComponent, EmailComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
