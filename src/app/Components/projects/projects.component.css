@@ -66,3 +66,19 @@
   padding-top: 75px;
   border-top: 10px dashed #ffffff59;
 }
+
+.smoth-animation {
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease;
+  overflow: hidden;
+  max-height: 600px;
+}
+
+.smoth-animation.hidden {
+  opacity: 0;
+  transform: scaleY(0);
+  max-height: 0;
+}
+

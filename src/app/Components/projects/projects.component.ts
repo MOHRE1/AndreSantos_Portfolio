@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  ocultStates: { [key: string]: boolean } = {};
 
+  ngOnInit() {
+    this.ocultStates['project01']= false
+    this.ocultStates['project02']= false
+    this.ocultStates['project03']= false
+  }
+
+  changeOcult(key: string) {
+    this.ocultStates[key] = !this.ocultStates[key];
+    console.log(this.ocultStates[key]);
+  }
 }

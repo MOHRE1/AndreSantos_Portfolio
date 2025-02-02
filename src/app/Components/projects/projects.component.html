@@ -2,12 +2,12 @@
   Projects
 </span>
 <div class="full-projects">
-  <div class="first-project">
+  <div class="first-project" (click)="changeOcult('project01')">
     <div class="left-divider">
       <div class="montserrat-tittle dmSans">
         01/
       </div>
-      <div class="descriptions">
+      <div class="descriptions smoth-animation" [ngClass]="{ 'hidden': !ocultStates['project01'] }">
         <div class="small-descriptions">
           <span class="semi-tittle dmSans" style="font-size: 22px; letter-spacing: 2px">
           / Position
@@ -35,8 +35,8 @@
       </div>
     </div>
     <div class="right-divider">
-      <div class="project-mockup">
-
+      <div class="project-mockup smoth-animation" [ngClass]="{ 'hidden': !ocultStates['project01'] }">
+        <img src="" alt="">
       </div>
       <div class="title-description">
         <span class="project-name montserrat-tittle">
@@ -48,12 +48,12 @@
       </div>
     </div>
   </div>
-  <div class="second-project">
+  <div class="second-project" (click)="changeOcult('project02')">
     <div class="left-divider">
       <div class="montserrat-tittle dmSans">
         02/
       </div>
-      <div class="descriptions">
+      <div class="descriptions smoth-animation" [ngClass]="{ 'hidden': !ocultStates['project02'] }">
         <div class="small-descriptions">
           <span class="semi-tittle dmSans" style="font-size: 22px; letter-spacing: 2px">
           / Position
@@ -80,7 +80,7 @@
       </div>
     </div>
     <div class="right-divider">
-      <div class="project-mockup">
+      <div class="project-mockup smoth-animation" [ngClass]="{ 'hidden': !ocultStates['project02'] }">
 
       </div>
       <div class="title-description">
@@ -93,12 +93,12 @@
       </div>
     </div>
   </div>
-  <div class="second-project">
+  <div class="second-project" (click)="changeOcult('project03')">
     <div class="left-divider">
       <div class="montserrat-tittle dmSans">
         03/
       </div>
-      <div class="descriptions">
+      <div class="descriptions smoth-animation" [ngClass]="{ 'hidden': !ocultStates['project03'] }">
         <div class="small-descriptions">
           <span class="semi-tittle dmSans" style="font-size: 22px; letter-spacing: 2px">
           / Position
@@ -126,7 +126,7 @@
       </div>
     </div>
     <div class="right-divider">
-      <div class="project-mockup">
+      <div class="project-mockup smoth-animation" [ngClass]="{ 'hidden': !ocultStates['project03'] }">
 
       </div>
       <div class="title-description">
