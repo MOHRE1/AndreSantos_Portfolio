@@ -20,9 +20,14 @@ export class AppComponent {
   bigCursorX = 0;
   bigCursorY = 0;
   isClicked = false;
+  isHovered = false;
 
   constructor(private zone: NgZone) {
     this.animateBigCursor();
+  }
+
+  ngOnInit(): void {
+    this.setupHoverListeners(); // Initialize the hover listeners when the component loads
   }
 
   // Listen to mouse movement
@@ -31,6 +36,7 @@ export class AppComponent {
     this.cursorX = event.clientX - 10;
     this.cursorY = event.clientY - 10;
   }
+
   // Handle mouse click
   @HostListener('document:click')
   onClick(): void {
@@ -54,4 +60,15 @@ export class AppComponent {
     });
   }
 
+
+  private setupHoverListeners(): void {
+    document.querySelectorAll('.hover-target').forEach(target => {
+      target.addEventListener('mouseenter', () => {
+        this.isHovered = true;
+      });
+      target.addEventListener('mouseleave', () => {
+        this.isHovered = false;
+      });
+    });
+  }
 }
