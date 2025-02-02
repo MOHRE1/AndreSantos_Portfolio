@@ -12,4 +12,7 @@ import {NgOptimizedImage} from '@angular/common';
 })
 export class IndividualComponent {
 
+  openLink(url: string): void {
+    window.open(url, '_blank');
+  }
 }
