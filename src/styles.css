@@ -57,9 +57,35 @@ body{
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+.custom-cursor.big.hovered {
+  width: 25px;
+  height: 25px;
+}
+
+/* Custom cursor hover effect */
 .custom-cursor.small.hovered {
-  background-color: red; /* Change color when hovering */
-  transform: scale(1.5); /* Slightly increase size */
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid black;
+  transform: scale(1.8) rotate(-45deg) translateY(4px);
+  border-radius: 50%;
+  animation: pulse 0.5s infinite;
+}
+
+/* Pulse animation to give feedback on hover */
+@keyframes pulse {
+  0% {
+    transform: scale(1.8) rotate(-45deg) translateY(4px);
+  }
+  50% {
+    transform: scale(2) rotate(-45deg) translateY(4px);
+  }
+  100% {
+    transform: scale(1.8) rotate(-45deg) translateY(4px);
+  }
 }
 
 /* Flex */

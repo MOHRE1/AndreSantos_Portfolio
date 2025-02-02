@@ -13,7 +13,7 @@ import {ProjectsComponent} from './Components/projects/projects.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Mines';
+  title = 'André Santos';
   //Cursor
   cursorX = 0;
   cursorY = 0;
