@@ -1,1 +1,18 @@
-<p>email works!</p>
+<div class="main-email">
+    <span class="semi-tittle dmSans" style="font-size: 50px; letter-spacing: 6px">
+      Contact me
+    </span>
+
+  <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+    <label>Name:</label>
+    <input formControlName="name" type="text" required>
+
+    <label>Email:</label>
+    <input formControlName="email" type="email" required>
+
+    <label>Message:</label>
+    <textarea formControlName="message" required></textarea>
+
+    <button type="submit" [disabled]="contactForm.invalid">Send</button>
+  </form>
+</div>
