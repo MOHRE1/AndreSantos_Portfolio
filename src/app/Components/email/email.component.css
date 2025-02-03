@@ -1,3 +1,74 @@
 .main-email{
   border-top: 1px solid black;
+  padding: 30px;
+}
+
+.left-divider{
+  padding-top: 30px;
+  width: 20%;
+}
+
+.right-divider{
+  padding-top: 30px;
+  width: 80%;
+}
+
+.contactme{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+input, textarea{
+  outline:none;
+  border: 2px solid #f5f5f5;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 0));
+  resize: none;
+  color:#00000061 !important;
+  letter-spacing: 2px;
+  padding-left: 25px;
+  font-size: 20px;
+
+}
+
+input::placeholder, textarea::placeholder{
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #f5f5f5;
+  letter-spacing: 4px;
+  padding-left: 15px;
+}
+
+#input-mensage{
+  height: 300px;
+  padding-top: 10px;
+}
+
+input{
+  height: 40px;
+}
+
+form{
+  gap: 25px;
+}
+
+button{
+  outline:none;
+  border: none;
+  transform: rotate(270deg);
+  background: none;
+  cursor: none;
+  transition: opacity 2s ease-in-out;
+}
+
+.invalid {
+  opacity: 0.1;
+  transition: opacity 2s ease-in-out;
+}
+
+.line{
+  border-left:30px dashed white;
+
 }

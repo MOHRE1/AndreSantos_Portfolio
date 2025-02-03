@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {EmailService} from '../../Services/email.service';
+import {NgClass, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-email',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf, NgClass],
   templateUrl: './email.component.html',
   styleUrl: './email.component.css'
 })

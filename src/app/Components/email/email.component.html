@@ -1,18 +1,20 @@
-<div class="main-email">
-    <span class="semi-tittle dmSans" style="font-size: 50px; letter-spacing: 6px">
+<div class="main-email flex-row">
+  <div class="left-divider line">
+  </div>
+  <div class="right-divider dmSans">
+    <div class="flex-row d-flex" style="align-items: center; padding-bottom: 30px; justify-content: space-between !important;">
+      <span class="semi-tittle dmSans contactme" style="font-size: 50px; letter-spacing: 6px">
       Contact me
     </span>
+      <button type="submit" [disabled]="contactForm.invalid" class="hover-target" [ngClass]="{'invalid' : contactForm.invalid}">
+        <img src="assets/arrow.png" alt="arrow" style="height: 85px">
+      </button>
+    </div>
 
-  <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
-    <label>Name:</label>
-    <input formControlName="name" type="text" required>
-
-    <label>Email:</label>
-    <input formControlName="email" type="email" required>
-
-    <label>Message:</label>
-    <textarea formControlName="message" required></textarea>
-
-    <button type="submit" [disabled]="contactForm.invalid">Send</button>
-  </form>
+    <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="flex-column">
+      <input formControlName="name" autocomplete="off" class="dmSans" type="text" required placeholder="Name">
+      <input formControlName="email" autocomplete="off" type="email" required placeholder="Email">
+      <textarea formControlName="message" type="text" required id="input-mensage" placeholder="Mensage"></textarea>
+    </form>
+  </div>
 </div>
