@@ -6,7 +6,7 @@
       <span class="semi-tittle dmSans contactme" style="font-size: 50px; letter-spacing: 6px">
       Contact me
     </span>
-      <button type="submit" [disabled]="contactForm.invalid" class="hover-target" [ngClass]="{'invalid' : contactForm.invalid}">
+      <button type="submit" [disabled]="contactForm.invalid" class="hover-target" [ngClass]="{'invalid' : contactForm.invalid, 'pulse': contactForm.valid}">
         <img src="assets/arrow.png" alt="arrow" style="height: 85px">
       </button>
     </div>
