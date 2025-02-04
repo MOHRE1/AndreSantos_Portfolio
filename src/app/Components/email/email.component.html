@@ -6,12 +6,11 @@
       <span class="semi-tittle dmSans contactme" style="font-size: 50px; letter-spacing: 6px">
       Contact me
     </span>
-      <button type="submit" [disabled]="contactForm.invalid" class="hover-target" [ngClass]="{'invalid' : contactForm.invalid, 'pulse': contactForm.valid}">
+      <button (click)="contactFormRef.ngSubmit.emit()" [disabled]="contactForm.invalid" class="hover-target" [ngClass]="{'invalid' : contactForm.invalid, 'pulse': contactForm.valid}">
         <img src="assets/arrow.png" alt="arrow" style="height: 85px">
       </button>
     </div>
-
-    <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="flex-column">
+    <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="flex-column" #contactFormRef="ngForm">
       <input formControlName="name" autocomplete="off" class="dmSans" type="text" required placeholder="Name">
       <input formControlName="email" autocomplete="off" type="email" required placeholder="Email">
       <textarea formControlName="message" type="text" required id="input-mensage" placeholder="Mensage"></textarea>

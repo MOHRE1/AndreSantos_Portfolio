@@ -22,6 +22,7 @@ export class EmailComponent {
   }
 
   sendEmail() {
+    debugger
     if (this.contactForm.valid) {
       this.emailService.sendEmail(this.contactForm.value)
         .then(() => alert('Email sent successfully!'))
