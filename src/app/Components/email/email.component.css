@@ -5,6 +5,7 @@
 
 .left-divider{
   padding-top: 30px;
+
   width: 20%;
 }
 
@@ -28,6 +29,7 @@ input, textarea{
   letter-spacing: 2px;
   padding-left: 25px;
   font-size: 20px;
+  cursor: none;
 }
 
 input:focus, textarea:focus{
@@ -99,8 +101,7 @@ button {
   outline: none;
   border: none;
   background: none;
-  cursor: pointer;
-  transform: rotate(270deg); /* Ensure it starts rotated */
+  transform: rotate(270deg);
   transition: opacity 0.5s ease-in-out;
 }
 
