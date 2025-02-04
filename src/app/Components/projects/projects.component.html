@@ -2,10 +2,13 @@
   Projects
 </span>
 <div class="full-projects">
-  <div class="first-project hover-target" (click)="changeOcult('project01')">
+  <div class="first-project hover-target" (click)="changeOcult('project01')" (mouseover)="showMessage = !ocultStates['project01']" (mouseleave)="showMessage = false">
     <div class="left-divider">
       <div class="montserrat-tittle dmSans">
         01/
+      </div>
+      <div class="hover-message dmSans" *ngIf="showMessage">
+        Click to Open
       </div>
       <div class="descriptions smoth-animation" [ngClass]="{ 'hidden': !ocultStates['project01'] }">
         <div class="small-descriptions">

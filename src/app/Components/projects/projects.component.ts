@@ -10,6 +10,7 @@ import {CommonModule} from '@angular/common';
 })
 export class ProjectsComponent implements OnInit {
   ocultStates: { [key: string]: boolean } = {};
+  showMessage: boolean = false;
 
   ngOnInit() {
     this.ocultStates['project01']= false
