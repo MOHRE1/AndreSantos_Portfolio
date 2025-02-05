@@ -14,7 +14,7 @@
   position-area: center;
   bottom: -70%;
   filter: url(#waveFilter);
-  animation: waveMotion 20s infinite linear;
+  animation: waveMotion 30s infinite linear;
 }
 
 @keyframes waveMotion {
