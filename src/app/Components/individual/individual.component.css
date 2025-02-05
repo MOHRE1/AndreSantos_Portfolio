@@ -114,6 +114,23 @@
   align-items: end;
 }
 
+.where span{
+  transition: letter-spacing 2s ease, font-weight 0.5s ease;
+}
+
+.where span:hover{
+  letter-spacing: 2px;
+  font-weight: bold;
+
+}
+
+.where span img{
+  height: 18px;
+  width: 18px;
+  opacity: 0.4;
+  margin-left: 5px;
+}
+
 .separations-2{
   width: 100%;
   display: flex;
@@ -139,3 +156,5 @@
   justify-content: center;
   height: fit-content;
 }
+
+
