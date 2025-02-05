@@ -13,15 +13,14 @@
   width: 1000px;
   position-area: center;
   bottom: -70%;
+  filter: url(#waveFilter);
+  animation: waveMotion 20s infinite linear;
 }
 
-/* WIP
-.tittle span{
-padding-top: 10px;
+@keyframes waveMotion {
+  0% { filter: url(#waveFilter); transform: scale(1); }
+  25% { filter: url(#waveFilter); transform: scale(1.2); }
+  50% { filter: url(#waveFilter); transform: scale(0.8); }
+  75% { filter: url(#waveFilter); transform: scale(0.9); }
+  100% { filter: url(#waveFilter); transform: scale(1); }
 }
-
-.tittle span::first-letter{
-background-color: white;
-border-radius: 0 20px 20px 0;
-}
-*/
