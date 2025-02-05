@@ -12,8 +12,13 @@ import {NgClass, NgIf} from '@angular/common';
 })
 export class EmailComponent {
   contactForm: FormGroup;
+  isLoading: boolean = false;
+  emailSend: boolean = false;
 
-  constructor(private fb: FormBuilder, private emailService: EmailService) {
+  constructor(
+    private fb: FormBuilder,
+    private emailService: EmailService
+  ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -22,12 +27,23 @@ export class EmailComponent {
   }
 
   sendEmail() {
-    debugger
     if (this.contactForm.valid) {
+      this.isLoading = true;
+
       this.emailService.sendEmail(this.contactForm.value)
-        .then(() => alert('Email sent successfully!'))
-        .catch(error => console.error('Error sending email:', error));
+        .then(() => {
+          this.isLoading = false;
+          this.emailSend = true;
+          console.log('Email sent');
+
+        })
+        .catch((error) => {
+          this.isLoading = false;
+          this.emailSend = false;
+          console.error('Error sending email:', error);
+        });
     }
   }
+
 
 }

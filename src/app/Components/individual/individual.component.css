@@ -29,6 +29,7 @@
 
 .left-side-individual{
   width: 50%;
+  align-self: center;
 }
 
 .right-side-individual{
