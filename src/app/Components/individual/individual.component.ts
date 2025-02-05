@@ -23,4 +23,11 @@ export class IndividualComponent {
     link.download = encodedFileName;
     link.click();
   }
+
+  scrollToEnd() {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  }
 }
