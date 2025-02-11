@@ -1,19 +1,21 @@
-import {Component, HostListener, NgZone} from '@angular/core';
+import {Component, HostListener, NgZone, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NavbarComponent} from './Components/navbar/navbar.component';
 import {CenterPageComponent} from './Components/center-page/center-page.component';
 import {IndividualComponent} from './Components/individual/individual.component';
 import {ProjectsComponent} from './Components/projects/projects.component';
 import {EmailComponent} from './Components/email/email.component';
+import {SplashComponent} from './Components/splash/splash.component';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, CenterPageComponent, IndividualComponent, ProjectsComponent, EmailComponent],
+  imports: [RouterOutlet, NavbarComponent, CenterPageComponent, IndividualComponent, ProjectsComponent, EmailComponent, SplashComponent, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'André Santos';
   //Cursor
   cursorX = 0;
@@ -22,9 +24,13 @@ export class AppComponent {
   bigCursorY = 0;
   isClicked = false;
   isHovered = false;
+  isLoading = true;
 
   constructor(private zone: NgZone) {
     this.animateBigCursor();
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 5000);
   }
 
   ngOnInit(): void {

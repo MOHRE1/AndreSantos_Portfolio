@@ -14,9 +14,13 @@
   [class.clicked]="isClicked"
   [class.hovered]="isHovered">
 </div>
-<app-navbar></app-navbar>
-<app-center-page></app-center-page>
-<app-individual></app-individual>
-<app-projects></app-projects>
-<app-email></app-email>
+<app-splash *ngIf="isLoading"></app-splash>
+<ng-container *ngIf="!isLoading">
+  <app-navbar></app-navbar>
+  <app-center-page></app-center-page>
+  <app-individual></app-individual>
+  <app-projects></app-projects>
+  <app-email></app-email>
+</ng-container>
+
 
