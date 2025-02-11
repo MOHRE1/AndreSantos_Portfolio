@@ -6,14 +6,22 @@ import {IndividualComponent} from './Components/individual/individual.component'
 import {ProjectsComponent} from './Components/projects/projects.component';
 import {EmailComponent} from './Components/email/email.component';
 import {SplashComponent} from './Components/splash/splash.component';
-import {NgIf} from '@angular/common';
+import {CommonModule, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, CenterPageComponent, IndividualComponent, ProjectsComponent, EmailComponent, SplashComponent, NgIf],
+  imports: [RouterOutlet,
+    NavbarComponent,
+    CommonModule,
+    CenterPageComponent,
+    IndividualComponent,
+    ProjectsComponent,
+    EmailComponent,
+    SplashComponent,
+    NgIf],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit{
   title = 'André Santos';
@@ -34,7 +42,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.setupHoverListeners(); // Initialize the hover listeners when the component loads
+    this.setupHoverListeners();
   }
 
   // Listen to mouse movement

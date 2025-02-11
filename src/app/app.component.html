@@ -1,26 +1,31 @@
-<!-- Small Cursor -->
-<div
-  class="custom-cursor small"
-  [style.left.px]="cursorX"
-  [style.top.px]="cursorY"
-  [class.clicked]="isClicked"
-  [class.hovered]="isHovered">
+<!-- Splash Screen -->
+<div *ngIf="isLoading" class="splash-container">
+  <app-splash></app-splash>
 </div>
-<!-- Big Cursor -->
-<div
-  class="custom-cursor big"
-  [style.left.px]="bigCursorX"
-  [style.top.px]="bigCursorY"
-  [class.clicked]="isClicked"
-  [class.hovered]="isHovered">
-</div>
-<app-splash *ngIf="isLoading"></app-splash>
-<ng-container *ngIf="!isLoading">
+
+<!-- Main Content -->
+<div *ngIf="!isLoading" class="main-content">
+  <!-- Small Cursor -->
+  <div
+    class="custom-cursor small"
+    [style.left.px]="cursorX"
+    [style.top.px]="cursorY"
+    [class.clicked]="isClicked"
+    [class.hovered]="isHovered">
+  </div>
+
+  <!-- Big Cursor -->
+  <div
+    class="custom-cursor big"
+    [style.left.px]="bigCursorX"
+    [style.top.px]="bigCursorY"
+    [class.clicked]="isClicked"
+    [class.hovered]="isHovered">
+  </div>
+
   <app-navbar></app-navbar>
   <app-center-page></app-center-page>
   <app-individual></app-individual>
   <app-projects></app-projects>
   <app-email></app-email>
-</ng-container>
-
-
+</div>
