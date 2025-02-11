@@ -5,6 +5,10 @@ body{
   cursor: none;
 }
 
+html{
+  cursor: none;
+}
+
 .right-slider{
    position: fixed;
    right: -655px;

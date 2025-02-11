@@ -1,4 +1,13 @@
-import {Component, HostListener, NgZone, OnInit} from '@angular/core';
+import {
+  AfterViewChecked,
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  NgZone,
+  OnInit,
+  Renderer2
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NavbarComponent} from './Components/navbar/navbar.component';
 import {CenterPageComponent} from './Components/center-page/center-page.component';
@@ -23,7 +32,7 @@ import {CommonModule, NgIf} from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements AfterViewChecked {
   title = 'André Santos';
   //Cursor
   cursorX = 0;
@@ -33,16 +42,25 @@ export class AppComponent implements OnInit{
   isClicked = false;
   isHovered = false;
   isLoading = true;
+  // Flag to prevent multiple event listeners
+  private listenersAdded = false;
 
-  constructor(private zone: NgZone) {
+
+  constructor(
+    private zone: NgZone,
+    private cdr: ChangeDetectorRef) {
     this.animateBigCursor();
     setTimeout(() => {
       this.isLoading = false;
     }, 5000);
   }
 
-  ngOnInit(): void {
-    this.setupHoverListeners();
+  ngAfterViewChecked(): void {
+    if (!this.isLoading && !this.listenersAdded) {
+      this.setupHoverListeners();
+      // Prevent adding listeners multiple times
+      this.listenersAdded = true;
+    }
   }
 
   // Listen to mouse movement
@@ -77,12 +95,22 @@ export class AppComponent implements OnInit{
 
 
   private setupHoverListeners(): void {
-    document.querySelectorAll('.hover-target').forEach(target => {
+    const targets = document.querySelectorAll('.hover-target');
+
+    if (targets.length === 0) {
+      return;
+    }
+
+    targets.forEach(target => {
       target.addEventListener('mouseenter', () => {
         this.isHovered = true;
+        // Manually trigger change
+        this.cdr.detectChanges();
       });
       target.addEventListener('mouseleave', () => {
         this.isHovered = false;
+        // Manually trigger change
+        this.cdr.detectChanges();
       });
     });
   }
