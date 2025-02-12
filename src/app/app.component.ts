@@ -16,6 +16,7 @@ import {ProjectsComponent} from './Components/projects/projects.component';
 import {EmailComponent} from './Components/email/email.component';
 import {SplashComponent} from './Components/splash/splash.component';
 import {CommonModule, NgIf} from '@angular/common';
+import {SkillsComponent} from './Components/skills/skills.component';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,7 @@ import {CommonModule, NgIf} from '@angular/common';
     ProjectsComponent,
     EmailComponent,
     SplashComponent,
-    NgIf],
+    NgIf, SkillsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
