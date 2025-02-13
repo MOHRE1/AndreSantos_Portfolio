@@ -18,13 +18,14 @@
   justify-content: center;
   height: fit-content;
   padding-bottom: 30px;
+  font-size: clamp(60px, 8vw, 170px);
 }
 
 .separations{
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 250px;
+  gap: clamp(50px, 10vw, 250px);
 }
 
 .left-side-individual{
@@ -63,7 +64,7 @@
 
 .img-text-individual span{
   text-align: justify;
-  font-size: 24px;
+  font-size: clamp(14px, 2vw, 24px);
 }
 
 .right-arrow{
@@ -135,7 +136,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 250px;
+  gap: clamp(40px, 10vw, 250px);
   margin-top: 110px;
 }
 

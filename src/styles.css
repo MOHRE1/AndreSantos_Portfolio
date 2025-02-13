@@ -93,7 +93,6 @@ html{
 }
 
 /* Flex */
-
 .d-flex{
   display: flex;
 }
@@ -113,7 +112,6 @@ html{
 }
 
 /* Font style */
-
 .dmSans{
   font-family: "DM Sans", sans-serif;
   font-style: normal;
@@ -125,9 +123,93 @@ html{
 .montserrat-tittle{
   font-family: "Montserrat", sans-serif;
   font-weight:700;
-  font-size: 170px;
+  font-size: clamp(60px, 8vw, 170px);
   color: black;
   height: 153px;
 }
 
-/* Styles */
+.main-content{
+   max-width: 1600px;
+   margin: 0 auto;
+ }
+
+/* MediaQuerys */
+/* Pequenos dispositivos (telemóveis em pé) */
+@media (max-width: 480px) {
+
+}
+
+/* Tablets pequenos e smartphones grandes */
+@media (max-width: 768px) {
+
+}
+
+/* Tablets em paisagem e laptops pequenos */
+@media (max-width: 1024px) {
+  .separations{
+    flex-direction: column !important;
+  }
+
+  .right-side-individual{
+    width: 100% !important;
+  }
+
+  .left-side-individual{
+    width: 100% !important;
+  }
+
+  .separations-2{
+    flex-direction: column !important;
+  }
+
+  .left-side-2{
+    width: 100% !important;
+  }
+
+  .right-side-2{
+    width: 100% !important;
+  }
+
+  .project-name{
+    font-size: clamp(60px, 8vw, 170px) !important;
+    margin-top: 20px !important;
+  }
+
+  .first-project{
+    gap: clamp(30px, 10vw, 200px) !important;
+    flex-direction: column !important;
+  }
+
+  .second-project{
+    gap: clamp(30px, 10vw, 200px) !important;
+    flex-direction: column !important;
+  }
+
+  .left-divider{
+    width: 100% !important;
+  }
+
+  .right-divider{
+    width: 100% !important;
+  }
+
+  .descriptions{
+    margin-top: 0 !important;
+  }
+}
+
+/* Notebooks comuns e telas médias */
+@media (max-width: 1280px) {
+
+}
+
+/* Telas grandes (monitores widescreen) */
+@media (max-width: 1440px) {
+
+}
+
+/* Telas muito grandes (2K, 4K) */
+@media (max-width: 1920px) {
+
+}
+
