@@ -8,3 +8,16 @@
   margin-right: 40px;
   padding: 10px;
 }
+
+.portfolio-span{
+  justify-content: center;
+  background-color: #0000001f;
+  border-radius: 11px;
+  gap: 25px;
+  box-shadow: white 0 3px;
+}
+
+.portfolio-span span{
+  letter-spacing: 10px;
+  color: white;
+}
